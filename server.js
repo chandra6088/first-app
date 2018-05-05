@@ -43,7 +43,7 @@ app.get('/getData',function(req,res){
 app.post('/postData',function(req,res){
 	console.log(req.body);
  var insertInput='insert into users values("'+req.body.uname+'","'+req.body.password+'","'+req.body.email+'")';
- // console.log(selectOutput);
+  console.log(selectOutput);
 	 
 	connection.query(insertInput, function(err, results) {
          res.send(results);
