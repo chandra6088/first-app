@@ -35,25 +35,25 @@ app.get('/getData',function(req,res){
 	 
 	connection.query(selectOutput, function(err, results) {
          res.send(results);
-       //console.log(results);
+      // console.log(results);
     });
        
 });
 
 app.post('/postData',function(req,res){
-	console.log(req.body);
+	//console.log(req.body);
  var insertInput='insert into users values("'+req.body.uname+'","'+req.body.password+'","'+req.body.email+'")';
  // console.log(selectOutput);
 	 
 	connection.query(insertInput, function(err, results) {
          res.send(results);
-       console.log(results);
+       //console.log(results);
     });
        
 });
 
 app.post('/postWriteNeed',function(req,res){
-	console.log(req.body);
+	//console.log(req.body);
 	//console.log(req.body.place);
 	var insertWriteNeed='insert into writeneed values("'+req.body.place+'","'+req.body.need+'","'+req.body.phone+'","'+req.body.category+'","'+req.body.subCategory+'")';
 	//console.log(insertWriteNeed);
@@ -67,7 +67,7 @@ app.post('/postWriteNeed',function(req,res){
 });
 
 app.get('/getWriteNeed',function(req,res){
-	console.log(req.body);
+	//console.log(req.body);
 	//console.log(req.body.place);
 	var selectWriteNeed='select place, need from writeneed';
 	//console.log(insertWriteNeed);
@@ -76,7 +76,7 @@ app.get('/getWriteNeed',function(req,res){
 			console.log(err);
 		}
 		res.send(results);
-		console.log(results);
+		//console.log(results);
 	});
 });
 

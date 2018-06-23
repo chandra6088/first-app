@@ -7,9 +7,9 @@ app.factory('myFactory', function ($http) {
     		  ];*/
     var obj=[];
          $http.get('/getData').then(function(response){
-	console.log(response);
+	//console.log(response);
 	obj.push(response.data);
-	console.log(obj);
+	//console.log(obj);
 });
 
 return obj;
@@ -31,9 +31,9 @@ app.factory('startupsFactory', function ($http) {
 
                var writeobj=[];
          $http.get('/getWriteNeed').then(function(response){
-    console.log(response);
+    //console.log(response);
     writeobj.push(response.data);
-    console.log(writeobj);
+    //console.log(writeobj);
 });
     //obj.message = '';
     /*obj.setMessage = function (newMessage) {

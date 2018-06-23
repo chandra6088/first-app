@@ -38,7 +38,7 @@ app.controller('authCtrl',function($scope,$location,myFactory,userPersistenceSer
 		$location.path('/signin-up');
 	}
 	//console.log(Lusername+' '+Lpassword);
-	console.log($location.url());
+	//console.log($location.url());
 	
 	//alert(myFactory.val);
 	
@@ -54,7 +54,7 @@ app.controller('authCtrl',function($scope,$location,myFactory,userPersistenceSer
 		//alert(username+' '+email+" "+password);
 		var dobj={uname:username,password:password,email:email};
 		$http.post('/postData',dobj).then(function(response){
-			console.log(response);
+			//console.log(response);
 		});
 
 		//myFactory.push(dobj);
@@ -83,7 +83,7 @@ app.controller('loginCtrl',function($scope,$location,userPersistenceService){
 
 app.controller('images_ctrl',function($scope,imagesFactory){
 	$scope.image=imagesFactory.title;
-	console.log($scope.image);
+	//console.log($scope.image);
 });
 
 app.controller('startup_ctrl',function($scope,$location,userPersistenceService,$interval,$http){
@@ -94,10 +94,10 @@ app.controller('startup_ctrl',function($scope,$location,userPersistenceService,$
 var getDataOfNeed=function(){
 	//var deffered=$q.defer();
 	$http.get('/getWriteNeed').then(function(response){
-    console.log(response.data);
+    //console.log(response.data);
     //deffered.resolve(response.data);
     $scope.startups=response.data;
-    console.log($scope.startups);
+    //console.log($scope.startups);
   	//$scope.startups=writeobj;
     //$scope.$watch("startups",function(newValue,oldValue){
      //	console.log(newValue);
@@ -121,7 +121,7 @@ app.controller('startup-content-ctrl',function($scope,$routeParams,$location,use
 	var id=$routeParams.id;
 
 	$http.get('/getWriteNeed').then(function(response){
-    console.log(response.data);
+    //console.log(response.data);
     //deffered.resolve(response.data);
     //$scope.startups=response.data;
     $scope.place=response.data[id].place;
@@ -142,7 +142,7 @@ app.controller('write-need-ctrl',function($scope,$http){
 
 		//alert(inputPlace +' '+inputNeed+' '+inputPhone+' '+inputCategory+' '+inputSubCategory);
 		$http.post('/postWriteNeed',wdobj).then(function(response){
-			console.log(response);
+			//console.log(response);
 		});
 	}	
 });
